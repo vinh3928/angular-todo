@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="stylesheets/style.css" title="" type="css/text" />
+    <title></title>
+  </head>
+  <body ng-controller="TodoController">
+    <form ng-submit="addTodo()">
+      <div class="field">
+        <label for="">New Todo</label>
+        <input type="text" ng-model="newTodo.message" name="" id="" value="" />
+      </div>
+    </form>
+    <div ng-repeat="todo in todos">
+      <a href="" ng-click="removeTodo(todo)">x</a>
+      <h3 ng-click="updateTodo($index)" ng-class="{'done': todo.completed}">{{todo.message}}</h3>
+    </div>
+
+    <script type="text/javascript" charset="utf-8" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" charset="utf-8" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" charset="utf-8" src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script type="text/javascript" charset="utf-8" src="bower_components/firebase/firebase.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/controller.js"></script>
+  </body>
+</html>
